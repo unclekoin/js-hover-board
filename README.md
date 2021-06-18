@@ -1,1 +1,1 @@
-# Board (mini-game)
+# Hover Board (mini-game)
