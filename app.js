@@ -5,21 +5,21 @@ for (let i = 0; i < SQUARES_NUMBER; i++) {
   const square = document.createElement('div');
   square.classList.add('square');
 
-  square.addEventListener('mouseover', () => setColor(square))
-  square.addEventListener('mouseleave', () => removeColor(square))
+  square.addEventListener('mouseover', setColor)
+  square.addEventListener('mouseleave', removeColor)
 
   board.append(square)
 }
 
-function setColor(element) {
+function setColor(event) {
   const color = getRandomColor();
 
-  element.style.backgroundColor = color;
-  element.style.boxShadow = `0 0 2px ${color}, 0 0 10px ${color}`
+  event.target.style.backgroundColor = color;
+  event.target.style.boxShadow = `0 0 2px ${color}, 0 0 10px ${color}`
 }
 
-function removeColor(element) {
-  element.removeAttribute('style');
+function removeColor(event) {
+  event.target.removeAttribute('style');
 }
 
 function getRandomColor() {
